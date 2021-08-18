@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 style="text-align:center;">Welcome to Tennis Analysis</h1>
+        <br>
+        <br>
+        <p><strong>Win Predictor</strong></p>
+      </div>
+    </div>
+
+    <div class="container" style='background-color: coral;'>
+      <div class="row">
+        <div class="col-sm-2" style='background-color: #92a8d1;'>
+
+        </div>
+
+        <div class="col-sm-8">
+
+          <form class="form-horizontal" action="{{ url_for('predict')}}" method="post">
+
+            <div class="row">
+              <div class="col-sm-6">
+                <legend>Player 1</legend>
+      					<div class="form-group select-dropdown">
+      						<div class="col-sm-9 control-size">
+      							<select class="form-control" name="player1" required="required">
+                      {% for option in options %}
+                      <option value="{{ option }}">{{ option }}</option>
+                      {% endfor %}
+      							</select>
+      						</div>
+      					</div>
+              </div>
+
+              <div class="col-sm-6">
+                <legend>Player 2</legend>
+      					<div class="form-group select-dropdown">
+      						<div class="col-sm-9 control-size">
+      							<select class="form-control" name="player2" required="required">
+                      {% for option in options %}
+                      <option value="{{ option }}">{{ option }}</option>
+                      {% endfor %}
+      							</select>
+      						</div>
+      					</div>
+              </div>
+
+
+              <!-- <div class="col-sm-4">
+                <legend>Based on</legend>
+      					<div class="form-group select-dropdown">
+      						<div class="col-sm-9 control-size">
+      							<select class="form-control" name="basis" required="required">
+                      <option value="1">5 year average</option>
+                      <option value="2">5 year trend</option>
+      							</select>
+      						</div>
+      					</div>
+              </div> -->
+
+            </div>
+
+            <div class="form-group submit-button">
+  						<div class="col-sm-offset-3 col-sm-9 control-size">
+  							<button type="submit" class="btn btn-primary btn btn-default">Predict</button>
+  						</div>
+  					</div>
+
+            </form>
+
+        </div>
+
+        <div class="col-sm-2" style='background-color: #92a8d1;'>
+          
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>

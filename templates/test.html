@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title></title>
+  </head>
+  <body>
+    <div class="jumbotron" style='background-color: grey;'>
+      <h1 style="text-align:center;"> Prediction Results</h1>
+    </div>
+    <div class="row">
+      <div class="col-sm-3" style='background-color: #92a8d1;'>
+    
+
+      </div>
+
+      <div class="col-sm-6" style='background-color: coral;'>
+        <div class="container">
+          <h2>Predicted Winner : {{output[4]}}</h2>
+          <br>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>{{ p1 }}</th>
+                <th>Player Stats</th>
+                <th>{{ p2 }}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for i,j,k in ls %}
+              <tr>
+                <td>{{ i }}</td>
+                <td>{{ j }}</td>
+                <td>{{ k }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+      <div class="col-sm-3" style='background-color: #92a8d1;'>
+        <h2></h2>
+      </div>
+    </div>
+
+
+  </body>
+</html>
